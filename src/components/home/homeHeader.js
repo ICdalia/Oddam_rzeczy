@@ -1,6 +1,5 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import  {Link as ScrollLink} from "react-scroll";
 
 const homeHeader = () => {
     return (
@@ -9,9 +8,7 @@ const homeHeader = () => {
                 <Link to="/logowanie">Zaloguj</Link>
                 <Link to="/rejestracja">Załóż konto</Link>
             </nav>
-
         </div>
-
     )
 }
 
