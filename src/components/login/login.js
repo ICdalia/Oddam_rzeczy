@@ -1,13 +1,19 @@
 import React, { useState } from "react";
+import {useNavigate} from "react-router-dom";
 
 
 function Login() {
+    const navigation = useNavigate();
     const [errorMessages, setErrorMessages] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [forms, setForms] = useState({
+        email: "",
+        pass: ""
+    })
 
     const database = [
         {
-            email: "email1",
+            email: "email1@test.pl",
             password: "pass1"
         },
         {
@@ -24,39 +30,39 @@ function Login() {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        let { mail, pass } = document.forms[0];
+        let { email, pass } = forms;
 
-        const mailData = database.find((user) => user.email === mail.value);
-
+        const mailData = database.find((user) => user.email === email && user.password === pass);
+        console.log(mailData, email, pass)
         if (mailData) {
-            if (mailData.password !== pass.value) {
-
-                setErrorMessages({ name: "pass", message: errors.pass });
-            } else {
-                setIsSubmitted(true);
-            }
+            navigation("/")
         } else {
-            setErrorMessages({ name: "mail", message: errors.mail });
+            setErrorMessages({
+                mail: errors.mail,
+                pass: errors.pass
+            });
         }
     };
 
-    const renderErrorMessage = (name) =>
-        name === errorMessages.name && (
-            <div className="error">{errorMessages.message}</div>
-        );
+    const handleChange = ({ target: { name, value }}) => {
+        setForms(prev => ({
+            ...prev,
+            [name]: value
+        }))
+    }
 
     const renderForm = (
         <div className="form">
             <form onSubmit={handleSubmit}>
                 <div className="input-form">
                     <label>Email </label>
-                    <input type="email" name="email" required />
-                    {renderErrorMessage("email")}
+                    <input type="email" name="email" value={forms.email} onChange={handleChange} required />
+                    {errorMessages?.email && <div className="error">{errorMessages.email}</div>}
                 </div>
                 <div className="input-form">
                     <label>Hasło </label>
-                    <input type="password" name="pass" required />
-                    {renderErrorMessage("pass")}
+                    <input type="password" value={forms.pass} onChange={handleChange} name="pass" required />
+                    {errorMessages?.pass && <div className="error">{errorMessages.pass}</div>}
                 </div>
                 <div className="button-container">
                     <input type="submit"  className="button-register" value="Załóż konto" />
