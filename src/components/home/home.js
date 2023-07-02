@@ -1,17 +1,25 @@
-import React from "react";
-import HomeHeader from "./homeHeader.js";
-import HomeMenu from "./homeMenu.js";
-
-const Home = () => {
-    return (
-        <>
-            <div>
-             <HomeHeader/>
-             <HomeMenu/>
-            </div>
-
-        </>
-    )
-}
-
-export default Home;
+// import React from "react";
+// import HomeSection from "./homeSection.js";
+// import AboutSection from "./aboutSection";
+//
+//
+//
+// function Home ()  {
+//     return (
+//         <>
+//             <div>
+//                 <div>
+//                     <HomeSection/>
+//                 </div>
+//                 <div>
+//                     <AboutSection/>
+//                     {/*<HomeThreeColumns/>*/}
+//                 </div>
+//             </div>
+//
+//
+//         </>
+//     )
+// }
+//
+// export default Home;
