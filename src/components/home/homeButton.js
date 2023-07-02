@@ -7,14 +7,18 @@ import Decoration from "../../assets/Decoration.svg"
 
 const HomeButton = () => {
     return (
-        <div className="container_homeright">
+        <div className="container_structure">
             <nav className="homeButton_user">
-                <div className="text_homeright">Zacznij pomagać! <br/> Oddaj niechciane rzeczy w zaufane ręce</div>
-                <div>
-                    <img src={Decoration} alt="Decoration Home" className="decoration_home"/>
+                <p className="text_homeright">Zacznij pomagać! <br/> Oddaj niechciane rzeczy w zaufane ręce</p>
+                <div className="decoration_home">
+                    <img src={Decoration} alt="Decoration Home" />
                 </div>
-                <Link to="/oddaj-rzeczy" className="btn_oddaj">Oddaj rzeczy</Link>
-                <Link to="/zorganizuj-zbiorke" className="btn_zorganizuj">Zorganizuj zbiórkę</Link>
+                <div className="btn_home">
+                    <div className="btn_control">
+                        <Link to="/oddaj-rzeczy" className="btn_oddaj">Oddaj <br/> rzeczy</Link>
+                        <Link to="/zorganizuj-zbiorke" className="btn_zorganizuj">Zorganizuj <br/> zbiórkę</Link>
+                    </div>
+                </div>
             </nav>
         </div>
     )
