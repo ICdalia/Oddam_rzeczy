@@ -2,7 +2,6 @@ import React from "react";
 import "../stylesHome.scss"
 import aboutImage from "../../assets/People.png";
 
-
 const AboutImage = () => {
     return (
         <div className="container_about">
