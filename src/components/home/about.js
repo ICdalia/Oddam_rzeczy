@@ -4,7 +4,6 @@ import Decoration from "../../assets/Decoration.svg";
 import Signature from "../../assets/Signature.svg";
 import AboutImage from "./aboutImage";
 
-
 const AboutUs = () => {
     return (
         <div className="container_about">
