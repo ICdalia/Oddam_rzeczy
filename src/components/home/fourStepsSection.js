@@ -1,6 +1,5 @@
 import React from "react";
 import "../stylesHome.scss"
-import Decoration from "../../assets/Decoration.svg";
 import Icon_1 from "../../assets/Icon-1.png"
 import Icon_2 from "../../assets/Icon-2.png"
 import Icon_3 from "../../assets/Icon-3.png"
