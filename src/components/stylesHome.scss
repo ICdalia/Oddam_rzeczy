@@ -1,6 +1,8 @@
+// section start
+
 .container_structure {
   max-width: 1900px;
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -17,6 +19,7 @@
       background: transparent;
       object-fit: cover;
       object-position: right;
+      margin-top: -100px;
     }
   }
 
@@ -60,7 +63,6 @@
         width: 674px;
         height: 120px;
 
-
         .btn_oddaj {
           display: flex;
           justify-content: center;
@@ -87,81 +89,62 @@
   }
 }
 
-.container_about {
-  max-width: 1900px;
+//section three columns
+
+.container_three_columns {
+  background-image: url("../assets/3 Columns Background.png");
   display: flex;
   flex-direction: row;
-  width: 100%;
-  background-color: #F0F1F1;
+  align-items: center;
+  max-width: 1900px;
 
-  .about {
-    width: 958px;
-    height: 935px;
+  .three_columns {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    line-height: 55px;
-    margin-left: 149px;
-    margin-right: 152px;
+    height: 252px;
+    margin: 40px 60px;
 
-    .title_about {
-      width: 100px;
-      height: 52px;
-      font-size: 30px;
-      line-height: 54px;
-      font-weight: 400;
+    .tcolumn{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
-      letter-spacing: -0.76px;
-      color: #3C3C3C;
-      left: 428px;
-      margin-bottom: 26px;
-    }
+      margin-left: 13%;
+      margin-right: 13%;
 
-    .decoration_home {
-      max-width: 253px;
-      max-height: 33px;
-      margin-bottom: 55px;
-    }
+      .number_column {
+        font-size: 90px;
+        text-align: center;
+        line-height:122px;
+        font-weight: 300;
+      }
 
-    .text_about {
-      letter-spacing: -0.6px;
-      color: #3C3C3C;
-      text-align: center;
-      font-size: 30px;
-      left: 149px;
-      width: 657px;
-      height: 209px;
-      margin-bottom: 40px;
-    }
+      .title_column {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 18px;
+        line-height: 30px;
+        font-weight: 400;
+        margin-bottom: 28px;
+      }
 
-    .signature_home {
-      width: 209px;
-      height: 149px;
-      align-self: flex-end;
-    }
-  }
-
-  .container_image {
-    flex-direction: column;
-    justify-content: flex-end;
-    width: 942px;
-    object-position: right;
-
-    .image_about {
-      background: transparent;
-      object-fit: cover;
-      object-position: left;
-      width: 942px;
-      height: 934px;
+      .text_column {
+        text-align: center;
+        font-size: 16px;
+        line-height: 18px;
+        font-weight: 300;
+        width: 334px;
+      }
     }
   }
 }
 
+//section four steps
+
 .container_foursteps {
-  width: 1900px;
+  max-width: 1900px;
   display: flex;
   justify-content: center;
+  height: 759px;
 
   .foursteps {
     display: flex;
@@ -171,8 +154,8 @@
     width: 416px;
     line-height: 55px;
 
-
     .title_foursteps {
+      margin-top: 55px;
       margin-bottom: 25px;
       font-size: 38px;
       font-weight: 200;
@@ -181,26 +164,27 @@
     }
 
     .decoration_foursteps {
-      padding-bottom: 34px;
+      padding-bottom: 12px;
     }
   }
 
   .four_column {
-    width: 1900px;
+    max-width: 1900px;
     display: flex;
     flex-direction: row;
     height: 325px;
     background-color: #F0F1F1;
+    gap: 138px;
+    padding-right: 415px;
+    padding-left: 415px;
 
     .column {
       display: flex;
       flex-direction: column;
       align-items: center;
       height: 325px;
-      width: 100%;
       justify-content: center;
-
-
+      width: 164px;
 
       .column img {
         width: 83px;
@@ -224,6 +208,7 @@
       }
     }
   }
+
   .btn_foursteps {
     text-transform: uppercase;
     font-size: 36px;
@@ -233,7 +218,7 @@
     width: 310px;
     height: 120px;
     border: 1px solid #3C3C3C;
-    margin-top: 35px;
+    margin-top: 35px;margin-bottom: 80px;
 
     .btn_oddaj {
       display: flex;
@@ -243,9 +228,93 @@
       height: 120px;
       text-decoration: none;
       color: #3C3C3C;
+
     }
   }
 }
+
+//section about us
+
+.container_about {
+  width: 1900px;
+  background-color: #F0F1F1;
+  height: 935px;
+
+  .about {
+    height: 935px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 55px;
+
+    .columns {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .column-left {
+
+
+        .title_about {
+          display: flex;
+          width: 100px;
+          height: 52px;
+          font-size: 30px;
+          line-height: 54px;
+          font-weight: 400;
+          text-align: center;
+          justify-content: center;
+          letter-spacing: -0.76px;
+          color: #3C3C3C;
+
+        }
+
+        .decoration_home {
+          max-width: 253px;
+          max-height: 33px;
+          margin-bottom: 55px;
+        }
+
+        .text_about {
+          letter-spacing: -0.6px;
+          color: #3C3C3C;
+          text-align: center;
+          font-size: 30px;
+          width: 657px;
+          height: 209px;
+          margin-bottom: 40px;
+          left: 149px;
+        }
+
+        .signature_home {
+          display: flex;
+          width: 209px;
+          height: 149px;
+          align-self: flex-end;
+        }
+      }
+
+      .column-right {
+        margin-left: 9.5%;
+        margin-top: 20px;
+
+        .container_image {
+          background-color: white;
+
+          .image_about {
+            background: transparent;
+            object-fit: cover;
+            object-position: left;
+            width: 942px;
+            height: 934px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
 
 
 
