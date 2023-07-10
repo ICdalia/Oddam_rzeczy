@@ -1,0 +1,121 @@
+
+.container_wehelp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1344px;
+  height: 862px;
+  margin-left: 278px;
+  margin-right: 278px;
+
+  .wehelp {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .title_help {
+      font-size: 38px;
+      font-weight: 300;
+      line-height: 22px;
+      width: 320px;
+      height: 52px;
+      letter-spacing: -0.76px;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .decoration_help {
+      max-width: 253px;
+      max-height: 33px;
+      margin-bottom: 55px;
+    }
+
+    .btn_organization {
+      margin-bottom: 70px;
+      border: none;
+
+      .btn_foundation {
+        font-size: 24px;
+        text-decoration: none;
+        color: black;
+        border: none;
+      }
+
+      .btn_non-governmental {
+        font-size: 24px;
+        text-decoration: none;
+        color: black;
+        border: none;
+      }
+
+      .btn_local {
+        font-size: 24px;
+        text-decoration: none;
+        color: black;
+        border: none;
+      }
+    }
+
+    .information_text {
+      width: 640px;
+      height: 94px;
+      font-size: 22px;
+      font-weight: 300;
+      text-align: center;
+      margin-bottom: -23px;
+    }
+  }
+}
+
+.section_organization {
+  width: 1344px;
+  .list_org {
+
+      h2 {
+        margin-top: 34px;
+        font-size: 26px;
+        line-height: 31px;
+        font-weight: 300;
+      }
+
+      .text_left {
+        text-align: left;
+        margin-top: -7px;
+        padding-bottom: 31px;
+        border-bottom: 0.5px solid #737373;
+      }
+
+      .text_right {
+        text-align: right;
+        margin-top: -10px;
+
+
+      }
+    }
+  }
+
+
+
+
+  .pagination {
+
+    .firstbutton {
+      color: #737373;
+      border: 1px solid #737373 !important;
+      padding: 5px 10px;
+      background-color: white;
+      cursor: pointer;
+    }
+
+    .lastbutton {
+      color: #737373;
+      border: none;
+      padding: 5px 10px;
+      background-color: white;
+      cursor: pointer;
+
+    }
+  }
