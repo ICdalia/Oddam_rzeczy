@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import {Link, useNavigate} from "react-router-dom";
+import React from "react";
+import {useNavigate} from "react-router-dom";
 import Decoration from "../../assets/Decoration.svg";
+import "../styleForm.scss"
 
 function Logout() {
     const navigate = useNavigate();
@@ -13,16 +14,14 @@ function Logout() {
 
     return (
         <div className="logout">
-            {/*<Navigation useScrollLink={false} />*/}
             <div className="logout-form">
-                <div>Wylogowanie nastąpiło pomyślnie!</div>
+                <div className="title">Wylogowanie nastąpiło pomyślnie!</div>
                 <div className="decoration_contact">
                     <img src={Decoration} alt="Decoration Home" />
                 </div>
-                />
-                <div className="logout-buttons">
+                <div className="btn_logout">
                     <button
-                        className="secondary-button"
+                        className="btn_home"
                         type="button"
                         onClick={handleClick}
                     >
