@@ -1,3 +1,5 @@
+//form login
+
 .login-form {
   max-width: 1858px;
   height: 946px;
@@ -37,7 +39,7 @@
 
       .form {
         .input-form {
-          margin: 40px 67px 31px 67px;
+          margin: 40px 0 0 133px;
           width: 250px;
           height: 62px;
 
@@ -66,13 +68,13 @@
 
     .button-container {
       display: flex;
-      margin-top: 40px;
+      margin-top: 93px;
       background-color: white;
       justify-content: flex-end;
-      gap:260px;
+      gap: 260px;
 
-      .button-register,
-      .button-login {
+      .btn_register,
+      .btn_login {
         display: flex;
         flex-direction: row;
         padding: 10px 20px;
@@ -84,9 +86,147 @@
 
       }
 
-      .button-login {
+      .btn_login {
         border: 0.75px solid #3C3C3C;
       }
     }
   }
 }
+
+// form register
+
+.register-form {
+  max-width: 1858px;
+  height: 946px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .title {
+    font-size: 40px;
+    width: 208px;
+    height: 55px;
+    letter-spacing: -0.8px;
+    line-height: 55px;
+    font-weight: 300;
+    margin-bottom: 25px;
+  }
+
+  .decoration_contact {
+    margin-bottom: 60px;
+  }
+  .container_register {
+    width: 499px;
+    height: 418px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .container_login_register {
+      width: 384px;
+      height: 328px;
+      background-color: #F0F1F1;
+      display: flex;
+      justify-content: center;
+
+      .form {
+        .input-form {
+          margin: 40px 0 0 133px;
+          width: 250px;
+          height: 62px;
+
+
+          label {
+            width: 42px;
+          }
+
+          input {
+            margin-top: 27px;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            background-color: #F0F1F1;
+            width: 250px;
+          }
+
+          .error {
+            color: red;
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+
+    .button-container {
+      display: flex;
+      margin-top: 93px;
+      background-color: white;
+      justify-content: flex-end;
+      gap: 260px;
+
+      .btn_register,
+      .btn_login {
+        display: flex;
+        flex-direction: row;
+        padding: 10px 20px;
+        border: none;
+        color: #000000;
+        cursor: pointer;
+        font-size: 16px;
+        background-color: #ffffff;
+
+      }
+
+      .btn_register {
+        border: 0.75px solid #3C3C3C;
+      }
+    }
+  }
+}
+
+//form logout
+
+.logout-form {
+  max-width: 1858px;
+  height: 649px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .title {
+    font-size: 40px;
+    width: 414px;
+    height: 110px;
+    letter-spacing: -0.8px;
+    line-height: 55px;
+    font-weight: 300;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  .decoration_contact {
+    margin-bottom: 30px;
+  }
+
+  .btn_logout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-weight: 300;
+
+    button {
+      border: 0.75px solid #3C3C3C;
+      width: 150px;
+      height: 50px;
+      font-size: 18px;
+      background-color: white;
+      cursor: pointer;
+    }
+  }
+}
+
+
+
+
