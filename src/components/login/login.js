@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, {useContext, useState} from "react";
 import {useNavigate} from "react-router-dom";
+import { URL } from "../register/register";
+import "../styleForm.scss"
+import {AppContext} from "../../App";
+import Decoration from "../../assets/Decoration.svg";
 
 
 function Login() {
+    const { setState } = useContext(AppContext);
     const navigation = useNavigate();
     const [errorMessages, setErrorMessages] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
@@ -10,17 +15,6 @@ function Login() {
         email: "",
         pass: ""
     })
-
-    const database = [
-        {
-            email: "email1@test.pl",
-            password: "pass1"
-        },
-        {
-            email: "email2",
-            password: "pass2"
-        }
-    ];
 
     const errors = {
         mail: "invalid email",
@@ -32,16 +26,27 @@ function Login() {
 
         let { email, pass } = forms;
 
-        const mailData = database.find((user) => user.email === email && user.password === pass);
-        console.log(mailData, email, pass)
-        if (mailData) {
-            navigation("/")
-        } else {
-            setErrorMessages({
-                mail: errors.mail,
-                pass: errors.pass
-            });
-        }
+        fetch(`${URL}?email=${email}&password=${pass}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.length >= 1) {
+                    setState(prev => ({
+                        user: email
+                    }))
+                    navigation("/")
+                } else {
+                    setErrorMessages({
+                                mail: errors.mail,
+                                pass: errors.pass
+                            });
+                }
+            })
+            .catch(e => {
+                setErrorMessages({
+                    mail: errors.mail,
+                    pass: errors.pass
+                });
+            })
     };
 
     const handleChange = ({ target: { name, value }}) => {
@@ -52,33 +57,41 @@ function Login() {
     }
 
     const renderForm = (
-        <div className="form">
-            <form onSubmit={handleSubmit}>
-                <div className="input-form">
-                    <label>Email </label>
-                    <input type="email" name="email" value={forms.email} onChange={handleChange} required />
-                    {errorMessages?.email && <div className="error">{errorMessages.email}</div>}
-                </div>
-                <div className="input-form">
-                    <label>Hasło </label>
-                    <input type="password" value={forms.pass} onChange={handleChange} name="pass" required />
-                    {errorMessages?.pass && <div className="error">{errorMessages.pass}</div>}
-                </div>
-                <div className="button-container">
-                    <input type="submit"  className="button-register" value="Załóż konto" />
-                    <input type="submit"  className="button-login" value="Zaloguj się" />
-                </div>
-            </form>
+            <div className="form">
+                <form onSubmit={handleSubmit}>
+                    <div className="input-form">
+                        <label >Email </label>
+                        <input type="email" name="email" value={forms.email} onChange={handleChange} required />
+                        {errorMessages?.email && <div className="error">{errorMessages.email}</div>}
+                    </div>
+                    <div className="input-form">
+                        <label>Hasło </label>
+                        <input type="password" value={forms.pass} onChange={handleChange} name="pass" required />
+                        {errorMessages?.pass && <div className="error">{errorMessages.pass}</div>}
+                    </div>
+                </form>
+
+
         </div>
     );
 
     return (
-        <div className="login">
             <div className="login-form">
                 <div className="title">Zaloguj się</div>
-                {isSubmitted ? <div>Użytkownik jest zalogowany</div> : renderForm}
+                <div className="decoration_contact">
+                    <img src={Decoration} alt="Decoration Home" />
+                </div>
+                <div className="container_form">
+                    <div className="container_login">
+                        {isSubmitted ? <div>Użytkownik jest zalogowany</div> : renderForm}
+                    </div>
+                    <div className="button-container">
+                        <input type="submit"  className="button-register" value="Załóż konto" />
+                        <input type="submit"  className="button-login" value="Zaloguj się" />
+                    </div>
+                </div>
+
             </div>
-        </div>
     );
 }
 

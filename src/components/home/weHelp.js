@@ -3,7 +3,7 @@ import Decoration from "../../assets/Decoration.svg";
 import "../styleThree.scss";
 
 const data = {
-    fundacjom: [
+    foundation: [
         {
             name: "Dbam o Zdrowie",
             aim: "Pomoc osobom znajdującym się w trudnej sytuacji życiowej.",
@@ -20,7 +20,7 @@ const data = {
             things: "ubrania, jedzenie, ciepłe koce"
         }
     ],
-    organizacjom: [
+    organization: [
         {
             name: "Lorem Ipsum 1",
             aim: "Quis varius quam quisque id diam vel quam elementum pulvinar.",
@@ -37,7 +37,7 @@ const data = {
     things: "Mi, quis, hendrerit, dolor"
 }
 ],
-    inne: [
+    other: [
         {
             name: "Lorem Ipsum inne",
             aim: "Quis varius quam quisque id diam vel quam elementum pulvinar.",
@@ -104,7 +104,7 @@ const data = {
 
 
 const Help = () => {
-    const [fundation, setFundation] = useState("fundacjom");
+    const [fundation, setFundation] = useState("foundation");
     const [pageIndex, setPageIndex] = useState(0);
     const items = 3;
 
@@ -133,18 +133,19 @@ const Help = () => {
                     <img src={Decoration} alt="Decoration Help" />
                 </div>
                 <nav className="btn_organization">
-                    <button onClick={() => setFundation("fundacjom")} className="btn_foundation">Fundacjom</button>
-                    <button onClick={() => setFundation("organizacjom")} className="btn_non-governmental">Organizacjom <br/>pozarządowym</button>
-                    <button onClick={() => setFundation("inne")} className="btn_local">Zbiórkom <br/> lokalnym</button>
+                    <button onClick={() => setFundation("foundation")} className="btn_foundation">Fundacjom</button>
+                    <button onClick={() => setFundation("organization")} className="btn_non-governmental">Organizacjom <br/>pozarządowym</button>
+                    <button onClick={() => setFundation("other")} className="btn_local">Zbiórkom <br/> lokalnym</button>
                 </nav>
                 <p className="information_text">W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.</p>
             </div>
-            <div>
+            <div className="section_organization">
                 {itemsData.map((item, index) => (
-                    <div key={index}>
+                    <div key={`fundation-${index}`} className="list_org">
                         <h2>{item.name}</h2>
-                        <p>{item.aim}</p>
-                        <p>{item.things}</p>
+                        <p className="text_right">{item.things}</p>
+                        <p className="text_left">{item.aim}</p>
+
                     </div>
                 ))}
             </div>
@@ -158,7 +159,6 @@ const Help = () => {
                         </button>
                     )
                 })}
-
 
             </div>
         </div>
