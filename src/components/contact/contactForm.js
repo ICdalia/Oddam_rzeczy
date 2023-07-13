@@ -1,4 +1,3 @@
-
 import { useState} from 'react';
 import { Formik } from 'formik';
 
@@ -77,40 +76,46 @@ const ContactForm = () => {
                           handleSubmit,
                           isSubmitting,
                       }) => (
-                        <form onSubmit={handleSubmit}>
-                            <label>Wpisz swoje imię</label>
-                            <input
-                                placeholder="imię"
-                                type="text"
-                                name="name"
-                                onChange={handleChange}
-                                onBlur={handleBlur}
-                                value={values.name}
-                                required
-                            />
-                            {errors.name && touched.name && errors.name}
-                            <label>Wpisz swój email</label>
-                            <input
-                                placeholder="email"
-                                type="email"
-                                name="email"
-                                onChange={handleChange}
-                                onBlur={handleBlur}
-                                value={values.email}
-                                required
-                            />
-                            {errors.email && touched.email && errors.email}
-                            <label>Wpisz swoją wiadomość</label>
-                            <input
-                                placeholder="wiadomość"
-                                type="text"
-                                name="message"
-                                onChange={handleChange}
-                                onBlur={handleBlur}
-                                value={values.message}
-                                required
-                            />
-                            {errors.message && touched.message && errors.message}
+                        <form onSubmit={handleSubmit} className="form">
+                            <div className="form_field">
+                                <label className="form_label">Wpisz swoje imię</label>
+                                <input
+                                    placeholder="imię"
+                                    type="text"
+                                    name="name"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.name}
+                                    required
+                                />
+                                {errors.name && touched.name && errors.name}
+                            </div>
+                            <div className="form_field">
+                                <label className="form_label">Wpisz swój email</label>
+                                <input
+                                    placeholder="email"
+                                    type="email"
+                                    name="email"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.email}
+                                    required
+                                />
+                                {errors.email && touched.email && errors.email}
+                            </div>
+                            <div className="form_field_textarea">
+                                <label className="form_label">Wpisz swoją wiadomość</label>
+                                <input
+                                    placeholder="wiadomość"
+                                    type="text"
+                                    name="message"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.message}
+                                    required
+                                />
+                                {errors.message && touched.message && errors.message}
+                            </div>
                             <button type="submit" disabled={isSubmitting}>
                                 Wyślij
                             </button>

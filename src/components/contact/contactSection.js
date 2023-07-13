@@ -2,7 +2,7 @@ import React from "react";
 import "../stylesContact.scss"
 import ContactForm from "./contactForm";
 import Decoration from "../../assets/Decoration.svg";
-import Footer from "./footer";
+import Footer from "./footer.js";
 
 
 const ContactSection = () => {
@@ -14,7 +14,9 @@ const ContactSection = () => {
                     <img src={Decoration} alt="Decoration Home" />
                 </div>
                 <ContactForm/>
+                {/*<Footer/>*/}
             </div>
+
         </div>
     )
 };
