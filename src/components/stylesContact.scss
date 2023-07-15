@@ -85,6 +85,10 @@
         background-color: rgba(255, 255, 255, 0);
         color: #3C3C3C26;
         margin-top: -10px;
+
+        &.setErrors{
+          color: red;
+        }
       }
 
       input {
@@ -97,13 +101,21 @@
         height: 97px;
       }
 
-      .errors {
+      .err {
         align-self: flex-start;
         color: red;
         text-align: center;
         font-size: 14px;
         font-weight: 700;
         margin-top: 5px;
+
+        &.err {
+          color: red;
+        }
+      }
+
+      &.err {
+        color: red;
       }
     }
 
@@ -129,7 +141,6 @@
 .container_contact_footer {
   width: 100%;
   display: flex;
-
   align-items: center;
   justify-content: center;
   height: 30px;
@@ -141,7 +152,7 @@
     font-size: 18px;
     color: #3C3C3C;
     font-weight: 300;
-    margin-left: -800px ;
+    margin-left: -800px;
   }
 
   .container_image {
@@ -154,9 +165,3 @@
     }
   }
 }
-
-
-
-
-
-
