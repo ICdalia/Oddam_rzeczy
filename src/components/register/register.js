@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import Decoration from "../../assets/Decoration.svg";
+import "../styleForm.scss"
 
 export const URL = "http://localhost:3005/users";
 
@@ -79,23 +81,33 @@ function Register() {
                     {errorMessages?.pass1 && <div className="error">{errorMessages.pass1}</div>}
                 </div>
                 <div className="input-form">
-                    <label>Potwierdzenie hasła</label>
+                    <label>Powtórz hasło</label>
                     <input type="password" value={forms.pass2} onChange={handleChange} name="pass2" required />
                     {errorMessages?.pass2 && <div className="error">{errorMessages.pass2}</div>}
                 </div>
                 <div className="button-container">
-                    <input type="submit"  className="button-register" value="Załóż konto" />
-                    <input type="button"  className="button-login" value="Zaloguj się" onClick={() => setIsSubmitted(true)}/>
+                    <input type="button"  className="btn_login" value="Zaloguj się" onClick={() => setIsSubmitted(true)}/>
+                    <input type="submit"  className="btn_register" value="Załóż konto" />
                 </div>
             </form>
         </div>
     );
 
     return (
-        <div className="login">
-            <div className="login-form">
-                <div className="title">Zaloguj się</div>
-                {isSubmitted ? <div>Użytkownik jest zalogowany</div> : renderForm}
+        <div className="register">
+            <div className="register-form">
+                <div className="title">Załóż konto</div>
+                <div className="decoration_contact">
+                    <img src={Decoration} alt="Decoration Home" />
+                </div>
+                <div className="container_register">
+                    <div className="container_login_register">
+                        {isSubmitted ? <div>Użytkownik jest zalogowany</div> : renderForm}
+                    </div>
+                    {/*<Link to="/rejestracja" className="btn_register">Załóż konto</Link>*/}
+                    <div className="button-container">
+                    </div>
+                </div>
             </div>
         </div>
     );
