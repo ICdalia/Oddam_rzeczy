@@ -1,57 +1,65 @@
 import React from "react";
 import  {Link as ScrollLink} from "react-scroll";
+import { Link } from "react-router-dom";
+import "../stylesBtnForm.scss"
 
-const homeMenu = () => {
+function homeMenu () {
+
     return (
         <div className="container_navbar">
             <nav className="navbar_menu">
-                <ScrollLink
+                <Link
+                    className="start"
                     activeClass="active"
-                    to="start"
+                    to="/"
                     spy={true}
                     smooth={true}
-                    offset={50}
+                    offset={-50}
                     duration={500}
+                    exact="true"
                 >
                     Start
-                </ScrollLink>
+                </Link>
                 <ScrollLink
                     activeClass="active"
-                    to="start"
+                    to="what_is_it"
                     spy={true}
                     smooth={true}
-                    offset={50}
+                    offset={-50}
                     duration={500}
+                    exact="true"
                 >
                     O co chodzi?
                 </ScrollLink>
                 <ScrollLink
                     activeClass="active"
-                    to="start"
+                    to="about"
                     spy={true}
                     smooth={true}
-                    offset={50}
+                    offset={-50}
                     duration={500}
                 >
                     O nas
                 </ScrollLink>
                 <ScrollLink
                     activeClass="active"
-                    to="start"
+                    to="help"
                     spy={true}
                     smooth={true}
-                    offset={50}
+                    offset={-50}
                     duration={500}
+                    exact="true"
                 >
                     Fundacja i organizacje
                 </ScrollLink>
                 <ScrollLink
                     activeClass="active"
-                    to="start"
+                    to="contact"
                     spy={true}
                     smooth={true}
-                    offset={50}
+                    offset={-50}
                     duration={500}
+                    exact="true"
                 >
                     Kontakt
                 </ScrollLink>
