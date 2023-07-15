@@ -6,7 +6,7 @@ import FourStepsButton from "./fourStepsButton";
 
 const FourSteps = () => {
     return (
-        <div className="container_foursteps">
+        <div className="container_foursteps" id="what_is_it">
             <div className="foursteps">
                 <div className="title_foursteps">Wystaczą 4 proste kroki</div>
                 <div className="decoration_foursteps">
@@ -16,7 +16,6 @@ const FourSteps = () => {
                 <FourStepsButton/>
                 </div>
             </div>
-
     )
 }
 
