@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import Decoration from "../../assets/Decoration.svg";
-import "../styleThree.scss";
+import "../stylesHome.scss";
 
 const data = {
     foundation: [
@@ -99,9 +99,7 @@ const data = {
             things: "Mi, quis, hendrerit, dolor"
         }
     ]
-
 }
-
 
 const Help = () => {
     const [fundation, setFundation] = useState("foundation");
@@ -126,14 +124,14 @@ const Help = () => {
     const itemsData = data[fundation].slice(startIndex, endIndex);
 
     return (
-        <div className="container_wehelp">
+        <div className="container_wehelp" id="help">
             <div className="wehelp">
                 <div className="title_help">Komu pomagamy?</div>
                 <div className="decoration_help">
                     <img src={Decoration} alt="Decoration Help" />
                 </div>
                 <nav className="btn_organization">
-                    <button onClick={() => setFundation("foundation")} className="btn_foundation">Fundacjom</button>
+                    <button onClick={() => setFundation("foundation")} className={`btn_foundation ${fundation === "foundation" && "active"}`}>Fundacjom</button>
                     <button onClick={() => setFundation("organization")} className="btn_non-governmental">Organizacjom <br/>pozarządowym</button>
                     <button onClick={() => setFundation("other")} className="btn_local">Zbiórkom <br/> lokalnym</button>
                 </nav>
@@ -153,13 +151,12 @@ const Help = () => {
                 {new Array(Math.ceil(data[fundation].length / items)).fill(null).map((_, i) => {
                     return (
                         <button
-                            className={pageIndex === 0 ? "firstbutton" : "lastbutton"}
+                            className={`firstbutton ${pageIndex === i ? "active" : ""}`}
                             onClick={() => setPageIndex(i)}
                         > {i + 1}
                         </button>
                     )
                 })}
-
             </div>
         </div>
     )
