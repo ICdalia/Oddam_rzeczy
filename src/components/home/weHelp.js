@@ -103,6 +103,8 @@ const data = {
 
 const Help = () => {
     const [fundation, setFundation] = useState("foundation");
+    const [organization, setOrganization] = useState("organization");
+    const [other, setOther] = useState("other");
     const [pageIndex, setPageIndex] = useState(0);
     const items = 3;
 
@@ -111,7 +113,7 @@ const Help = () => {
     }, [fundation])
 
     const handleChange = (event, newValue) => {
-        setFundation(newValue);
+        setFundation(newValue) || setOrganization(newValue) || setOther(newValue);
         setPageIndex(0);
     };
 
@@ -132,8 +134,8 @@ const Help = () => {
                 </div>
                 <nav className="btn_organization">
                     <button onClick={() => setFundation("foundation")} className={`btn_foundation ${fundation === "foundation" && "active"}`}>Fundacjom</button>
-                    <button onClick={() => setFundation("organization")} className="btn_non-governmental">Organizacjom <br/>pozarządowym</button>
-                    <button onClick={() => setFundation("other")} className="btn_local">Zbiórkom <br/> lokalnym</button>
+                    <button onClick={() => setFundation("organization")} className={`btn_non-governmental ${organization === "organization" && "active"}`}>Organizacjom <br/>pozarządowym</button>
+                    <button onClick={() => setFundation("other")} className={`btn_local ${other === "other" && "active"}`}>Zbiórkom <br/> lokalnym</button>
                 </nav>
                 <p className="information_text">W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.</p>
             </div>
@@ -143,7 +145,6 @@ const Help = () => {
                         <h2>{item.name}</h2>
                         <p className="text_right">{item.things}</p>
                         <p className="text_left">{item.aim}</p>
-
                     </div>
                 ))}
             </div>
