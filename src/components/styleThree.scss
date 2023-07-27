@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   max-width: 1344px;
-  height: 862px;
+  height: 1012px;
   margin-left: 278px;
   margin-right: 278px;
 
@@ -25,6 +25,7 @@
       letter-spacing: -0.76px;
       text-align: center;
       margin-bottom: 25px;
+      margin-top:70px;
     }
 
     .decoration_help {
@@ -35,27 +36,54 @@
 
     .btn_organization {
       margin-bottom: 70px;
+      display: flex;
+      width: 750px;
+      justify-content: space-between;
+      align-items: center;
       border: none;
 
+      &.active {
+        border: 1px solid black;
+      }
+
       .btn_foundation {
+        background: white;
         font-size: 24px;
         text-decoration: none;
-        color: black;
-        border: none;
+        color: #3C3C3C;
+        font-weight: 300;
+        width: 124px;
+        height: 33px;
+        cursor: pointer;
+
+        &.active {
+          border: 1px solid black;
+        }
       }
 
       .btn_non-governmental {
+        color: #3C3C3C;
+        background: white;
         font-size: 24px;
         text-decoration: none;
-        color: black;
         border: none;
+        width: 170px;
+        height: 57px;
+        cursor: pointer;
+        &.active {
+          border: 1px solid black;
+        }
       }
 
       .btn_local {
+        background: white;
         font-size: 24px;
         text-decoration: none;
-        color: black;
+        color: #3C3C3C;
         border: none;
+        width: 108px;
+        height: 57px;
+        cursor: pointer;
       }
     }
 
@@ -91,31 +119,40 @@
       .text_right {
         text-align: right;
         margin-top: -10px;
-
-
       }
     }
   }
 
-
-
-
   .pagination {
+    margin-top: 76px;
+    margin-bottom: 80px;
 
     .firstbutton {
       color: #737373;
-      border: 1px solid #737373 !important;
+      border: 1px solid #737373;
       padding: 5px 10px;
       background-color: white;
       cursor: pointer;
+      width: 40px;
+      height: 50px;
+      font-size: 18px;
+
+    &.active {
+      border: 1px solid #fad648;
+    }
     }
 
     .lastbutton {
       color: #737373;
-      border: none;
       padding: 5px 10px;
       background-color: white;
       cursor: pointer;
+      width: 40px;
+      height: 50px;
+      font-size: 18px;
 
+      &.active {
+        border: 1px solid #fad648;
+      }
     }
   }
