@@ -98,6 +98,7 @@
   align-items: center;
   max-width: 1900px;
 
+
   .three_columns {
     display: flex;
     height: 252px;
@@ -253,7 +254,6 @@
 
       .column-left {
 
-
         .title_about {
           display: flex;
           width: 100px;
@@ -265,12 +265,13 @@
           justify-content: center;
           letter-spacing: -0.76px;
           color: #3C3C3C;
+          margin: 26px auto;
         }
 
         .decoration_home {
           max-width: 253px;
           max-height: 33px;
-          margin-bottom: 55px;
+          margin: 55px auto;
         }
 
         .text_about {
@@ -280,7 +281,7 @@
           font-size: 30px;
           width: 657px;
           height: 209px;
-          margin-bottom: 40px;
+          margin-bottom: 51px;
           left: 149px;
         }
 
@@ -288,7 +289,8 @@
           display: flex;
           width: 209px;
           height: 149px;
-          align-self: flex-end;
+          margin-left: auto;
+
         }
       }
 
@@ -313,7 +315,6 @@
 }
 
 // section organization
-
 
 .container_wehelp {
   display: flex;
@@ -368,6 +369,10 @@
         width: 124px;
         height: 33px;
         cursor: pointer;
+
+        &.active {
+          border: 1px solid black;
+        }
       }
 
       .btn_non-governmental {
@@ -379,6 +384,10 @@
         width: 170px;
         height: 57px;
         cursor: pointer;
+
+        .active {
+          border: 1px solid black;
+        }
       }
 
       .btn_local {
@@ -390,6 +399,7 @@
         width: 108px;
         height: 57px;
         cursor: pointer;
+
       }
     }
 
@@ -406,6 +416,7 @@
 
 .section_organization {
   width: 1344px;
+
   .list_org {
 
     h2 {
@@ -435,13 +446,16 @@
 
   .firstbutton {
     color: #737373;
-    border: 1px solid #737373 !important;
+    border: 1px solid #737373;
     padding: 5px 10px;
     background-color: white;
     cursor: pointer;
     width: 40px;
     height: 50px;
     font-size: 18px;
+    &.active {
+      border-color: red;
+    }
   }
 
   .lastbutton {

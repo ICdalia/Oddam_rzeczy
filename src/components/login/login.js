@@ -56,6 +56,10 @@ function Login() {
         }))
     }
 
+    const handleRegisterClick = () => {
+        navigation("/rejestracja");
+    };
+
     const renderForm = (
             <div className="form">
                 <form onSubmit={handleSubmit}>
@@ -68,6 +72,10 @@ function Login() {
                         <label>Hasło </label>
                         <input type="password" value={forms.pass} onChange={handleChange} name="pass" required />
                         {errorMessages?.pass && <div className="error">{errorMessages.pass}</div>}
+                    </div>
+                    <div className="button-container">
+                        <input type="submit"  className="btn_register" value="Załóż konto" onClick={handleRegisterClick}/>
+                        <input type="submit"  className="btn_login" value="Zaloguj się" onClick={() => setIsSubmitted(true)}/>
                     </div>
                 </form>
 
@@ -86,8 +94,6 @@ function Login() {
                         {isSubmitted ? <div>Użytkownik jest zalogowany</div> : renderForm}
                     </div>
                     <div className="button-container">
-                        <input type="submit"  className="button-register" value="Załóż konto" />
-                        <input type="submit"  className="button-login" value="Zaloguj się" />
                     </div>
                 </div>
 

@@ -26,17 +26,17 @@ const data = {
             aim: "Quis varius quam quisque id diam vel quam elementum pulvinar.",
             things: "Egestas, sed, tempus"
         },
-{
-    name: "Lorem Ipsum 2",
-        aim: "Hendrerit gravida rutrum quisque non tellus orci ac auctor augue.",
-    things: "Ut, aliquam, purus, sit, amet"
-},
-{
-    name: "Lorem Ipsum 3",
-        aim: "Scelerisque in dictum non consectetur a erat nam.",
-    things: "Mi, quis, hendrerit, dolor"
-}
-],
+        {
+            name: "Lorem Ipsum 2",
+            aim: "Hendrerit gravida rutrum quisque non tellus orci ac auctor augue.",
+            things: "Ut, aliquam, purus, sit, amet"
+        },
+        {
+            name: "Lorem Ipsum 3",
+            aim: "Scelerisque in dictum non consectetur a erat nam.",
+            things: "Mi, quis, hendrerit, dolor"
+        }
+    ],
     other: [
         {
             name: "Lorem Ipsum inne",
@@ -103,15 +103,29 @@ const data = {
 
 const Help = () => {
     const [fundation, setFundation] = useState("foundation");
+    const [organization, setOrganization] = useState("organization");
+    const [other, setOther] = useState("other");
     const [pageIndex, setPageIndex] = useState(0);
     const items = 3;
 
     useEffect(() => {
-        setPageIndex(0)
-    }, [fundation])
+        setPageIndex(0);
+    }, [fundation, organization, other]);
 
     const handleChange = (event, newValue) => {
-        setFundation(newValue);
+        if (newValue === "foundation") {
+            setFundation(newValue);
+            setOrganization(null);
+            setOther(null);
+        } else if (newValue === "organization") {
+            setOrganization(newValue);
+            setFundation(null);
+            setOther(null);
+        } else if (newValue === "other") {
+            setOther(newValue);
+            setFundation(null);
+            setOrganization(null);
+        }
         setPageIndex(0);
     };
 
@@ -119,9 +133,10 @@ const Help = () => {
         setPageIndex(newPageIndex);
     };
 
+    const selectedData = data[fundation] || data[organization] || data[other];
     const startIndex = pageIndex * items;
     const endIndex = startIndex + items;
-    const itemsData = data[fundation].slice(startIndex, endIndex);
+    const itemsData = selectedData.slice(startIndex, endIndex);
 
     return (
         <div className="container_wehelp" id="help">
@@ -132,7 +147,7 @@ const Help = () => {
                 </div>
                 <nav className="btn_organization">
                     <button onClick={() => setFundation("foundation")} className={`btn_foundation ${fundation === "foundation" && "active"}`}>Fundacjom</button>
-                    <button onClick={() => setFundation("organization")} className="btn_non-governmental">Organizacjom <br/>pozarządowym</button>
+                    <button onClick={() => setFundation("organization")} className={`btn_non-governmental ${organization === "foundation" && "active"}`}>Organizacjom <br/>pozarządowym</button>
                     <button onClick={() => setFundation("other")} className="btn_local">Zbiórkom <br/> lokalnym</button>
                 </nav>
                 <p className="information_text">W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.</p>
@@ -143,7 +158,11 @@ const Help = () => {
                         <h2>{item.name}</h2>
                         <p className="text_right">{item.things}</p>
                         <p className="text_left">{item.aim}</p>
-
+                    </div> &&
+                    <div key={`fundation-${index}`} className="list_org">
+                    <h2>{item.name}</h2>
+                    <p className="text_right">{item.things}</p>
+                    <p className="text_left">{item.aim}</p>
                     </div>
                 ))}
             </div>

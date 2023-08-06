@@ -3,8 +3,6 @@ import {Link} from "react-router-dom";
 import "../stylesHome.scss"
 import Decoration from "../../assets/Decoration.svg"
 
-
-
 const HomeButton = () => {
     return (
         <div className="container_structure">
