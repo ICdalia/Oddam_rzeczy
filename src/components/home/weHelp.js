@@ -109,11 +109,23 @@ const Help = () => {
     const items = 3;
 
     useEffect(() => {
-        setPageIndex(0)
-    }, [fundation])
+        setPageIndex(0);
+    }, [fundation, organization, other]);
 
     const handleChange = (event, newValue) => {
-        setFundation(newValue) || setOrganization(newValue) || setOther(newValue);
+        if (newValue === "foundation") {
+            setFundation(newValue);
+            setOrganization(null);
+            setOther(null);
+        } else if (newValue === "organization") {
+            setOrganization(newValue);
+            setFundation(null);
+            setOther(null);
+        } else if (newValue === "other") {
+            setOther(newValue);
+            setFundation(null);
+            setOrganization(null);
+        }
         setPageIndex(0);
     };
 
@@ -121,10 +133,11 @@ const Help = () => {
         setPageIndex(newPageIndex);
     };
 
+    const selectedData = data[fundation] || data[organization] || data[other];
     const startIndex = pageIndex * items;
     const endIndex = startIndex + items;
-    const itemsData = data[fundation].slice(startIndex, endIndex);
-    /
+    const itemsData = selectedData.slice(startIndex, endIndex);
+
     return (
         <div className="container_wehelp" id="help">
             <div className="wehelp">
