@@ -236,7 +236,7 @@
 //section about us
 
 .container_about {
-  width: 1900px;
+  max-width: 1900px;
   background-color: #F0F1F1;
   height: 935px;
 
@@ -327,7 +327,6 @@
   margin-right: 278px;
 
   .wehelp {
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -337,7 +336,7 @@
       font-size: 38px;
       font-weight: 300;
       line-height: 22px;
-      width: 320px;
+      max-width: 320px;
       height: 52px;
       letter-spacing: -0.76px;
       text-align: center;
@@ -414,7 +413,7 @@
   }
 }
 
-.section_organization {
+.section_fundation {
   width: 1344px;
 
   .list_org {
